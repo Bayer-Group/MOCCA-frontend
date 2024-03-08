@@ -1,0 +1,18 @@
+.Select-menu-outer {
+    display : block !important;
+}
+
+p {
+  text-align: justify;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Remove the increment arrows from inputs */
+input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+     margin: 0; 
+}

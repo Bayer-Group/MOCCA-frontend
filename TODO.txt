@@ -1,0 +1,15 @@
+For all labels/messages, make sure they are updated when any relevant change is made.
+ - for processing, account for when campaign is change or already processed
+ - load settings from current campaign
+
+Add option to download processed campaign
+
+Fix background processing of dataset - it doesnt really run in background and rerunning gives unexpected behaviour
+
+Look into how vendor software deals with deconvolution
+
+IMPORTANT 
+
+Update description of processing settings
+
+Fix long waiting times for Data page, and the subsequent timeouts
