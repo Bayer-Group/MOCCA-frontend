@@ -1,12 +1,13 @@
 from typing import Any
 
-from dash import dcc # type: ignore
+from dash import dcc  # type: ignore
 
 from mocca2 import MoccaDataset
-from mocca2.dataset import ProcessingSettings
+from mocca2.dataset.settings import ProcessingSettings
 
 import cache
 from pages.process.layout_chrom_preview import visualize_chromatogram
+
 
 def process_single(settings: ProcessingSettings, sample_idx: int | None) -> str | Any:
     """Processes single sample. Either returns error message (string), or html elements with visualized data."""
@@ -14,7 +15,7 @@ def process_single(settings: ProcessingSettings, sample_idx: int | None) -> str 
     if sample_idx is None:
         return "Please select which sample should be analysed!"
     sample_idx = int(sample_idx)
-    
+
     # create test campaign
     test_campaign = MoccaDataset()
     current_campaign = cache.get_campaign()

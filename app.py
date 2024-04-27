@@ -2,8 +2,8 @@
 This is the entry point for the Dash application
 """
 
-import dash # type: ignore
-import dash_bootstrap_components as dbc # type: ignore
+import dash  # type: ignore
+import dash_bootstrap_components as dbc  # type: ignore
 import webbrowser
 
 # This is for caching global variables
@@ -11,22 +11,25 @@ from flask_caching import Cache
 
 # Do not print request logs
 import logging
-logging.getLogger('werkzeug').setLevel(logging.WARNING)
+
+logging.getLogger("werkzeug").setLevel(logging.WARNING)
 
 # bootstrap theme (https://bootswatch.com/cerulean/)
 external_stylesheets = [dbc.themes.CERULEAN]
-external_scripts = [{
-        'src': 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
-        'integrity': 'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p',
-        'crossorigin': 'anonymous'
-    }]
+external_scripts = [
+    {
+        "src": "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js",
+        "integrity": "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p",
+        "crossorigin": "anonymous",
+    }
+]
 
 # initialize the application
 app = dash.Dash(
     __name__,
     external_stylesheets=external_stylesheets,
     external_scripts=external_scripts,
-    title="Mocca"
+    title="Mocca",
 )
 server = app.server
 
@@ -35,10 +38,12 @@ app.config.suppress_callback_exceptions = True
 
 # Initialize cache - needed for global variables
 flask_cache = Cache()
-flask_cache.init_app(app.server, config={'CACHE_TYPE':'SimpleCache', "CACHE_DEFAULT_TIMEOUT":1e30})
+flask_cache.init_app(
+    app.server, config={"CACHE_TYPE": "SimpleCache", "CACHE_DEFAULT_TIMEOUT": 1e30}
+)
 
 # define directory for caching files
-CACHE_DIR = '_cache'
+CACHE_DIR = "_cache"
 
 # Pages must be imported after cache and campaign are initialized
 import cache
@@ -51,14 +56,17 @@ import pages.data
 import pages.process
 import pages.results
 
+
 # create callback for loading content for different URL paths
-@app.callback(dash.dependencies.Output('page-content', 'children'),
-              [dash.dependencies.Input('url', 'pathname')])
-def display_page(pathname : str):
+@app.callback(
+    dash.dependencies.Output("page-content", "children"),
+    [dash.dependencies.Input("url", "pathname")],
+)
+def display_page(pathname: str):
     """
     When URL changes, the content of `div#page-content` is updated accordingly
     """
-    if pathname in ['', '/', '/home']:
+    if pathname in ["", "/", "/home"]:
         return pages.home.get_layout()
     elif pathname == "/data":
         return pages.data.get_layout()
@@ -68,19 +76,16 @@ def display_page(pathname : str):
         return pages.results.get_layout()
     else:
         # TODO: add page not found page
-        return None 
+        return None
 
-@app.server.before_first_request
-def initialize():
+
+# start the server
+if __name__ == "__main__":
     # initialize global variables and file caching
     cache.init()
 
     # load the base layout
     app.layout = pages.base_layout.get_layout()
 
-# start the server
-if __name__ == '__main__':
-    # app.run(host='127.0.0.1', debug=True)
-
-    #webbrowser.open_new("http://localhost:8050")
-    app.run(host='127.0.0.1', debug=True)
+    webbrowser.open("http://localhost:8050")
+    app.run(host="127.0.0.1", debug=False, port=8050)

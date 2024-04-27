@@ -1,4 +1,4 @@
-"""This file contains routines for restoring campaign from .pkl file"""
+"""This file contains routines for restoring campaign from .mocca2 file"""
 
 from typing import Dict, List, Tuple
 
@@ -11,9 +11,9 @@ def gen_upload_table_from_campaign() -> Tuple[List[Dict], str]:
 
     current_campaign = cache.get_campaign()
 
-    istd = current_campaign.istd_compound
+    istd = current_campaign._istd_chromatogram
     if istd is not None:
-        istd_name = current_campaign.compounds[istd].name
+        istd_name = current_campaign.compound_references[istd][0]
         if istd_name is None:
             istd_name = ""
     else:
@@ -25,8 +25,11 @@ def gen_upload_table_from_campaign() -> Tuple[List[Dict], str]:
         if idx in current_campaign.compound_references:
             compound_name, compound_conc = current_campaign.compound_references[idx]
 
-        istd_conc = current_campaign.istd_concentrations[idx] \
-            if idx in current_campaign.istd_concentrations else None
+        istd_conc = (
+            current_campaign.istd_concentrations[idx]
+            if idx in current_campaign.istd_concentrations
+            else None
+        )
 
         # create the entry for table
         row = dict(
@@ -38,7 +41,7 @@ def gen_upload_table_from_campaign() -> Tuple[List[Dict], str]:
             blank=chromatogram.blank_path,
             compound_name=compound_name,
             compound_conc=compound_conc,
-            istd_conc=istd_conc
+            istd_conc=istd_conc,
         )
         data.append(row)
 
