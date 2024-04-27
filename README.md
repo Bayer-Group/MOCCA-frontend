@@ -14,17 +14,19 @@ To automate your workflow and get accurate results, MOCCA2 features:
 
 # Installation
 
-Install Python (versions 3.10, 3.11 or 3.12) and install the required packages.
-
-```
-python -m pip install -r requirements
-```
-
 Clone this repository.
 
 ```
 git clone https://github.com/oboril/MOCCA-frontend
 ```
+
+Install Python (versions 3.10, 3.11 or 3.12) and install the required packages.
+
+```
+python -m pip install -r requirements.txt
+```
+
+
 
 You can now run the app!
 
