@@ -26,8 +26,6 @@ Install Python (versions 3.10, 3.11 or 3.12) and install the required packages.
 python -m pip install -r requirements.txt
 ```
 
-
-
 You can now run the app!
 
 ```
@@ -47,7 +45,7 @@ First, install and start the MOCCA2 Web App.
 This tutorial is using example chromatograms from Knoevenagel condensation ([Haas et al., 2023](https://doi.org/10.1021/acscentsci.2c01042)). You can download this data using:
 
 ```
-git clone https://github.com/oboril/MOCCA-frontend/tree/example-data
+git clone -b example-data https://github.com/oboril/MOCCA-frontend
 ```
 
 The data contains:
