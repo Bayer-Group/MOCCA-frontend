@@ -1,6 +1,6 @@
 # Web App for MOCCA2
 
-This Web App is a GUI for automatic HPLC chromatogram processing using the [MOCCA2 Python package](https://github.com/oboril/mocca).
+This Web App is a GUI for automatic HPLC chromatogram processing using the [MOCCA2 Python package](https://github.com/bayer-group/mocca).
 
 To automate your workflow and get accurate results, MOCCA2 features:
 
@@ -17,7 +17,7 @@ To automate your workflow and get accurate results, MOCCA2 features:
 Clone this repository.
 
 ```
-git clone https://github.com/oboril/MOCCA-frontend
+git clone https://github.com/bayer-group/MOCCA-frontend
 ```
 
 Install Python (versions 3.10, 3.11 or 3.12) and install the required packages.
@@ -45,7 +45,7 @@ First, install and start the MOCCA2 Web App.
 This tutorial is using example chromatograms from Knoevenagel condensation ([Haas et al., 2023](https://doi.org/10.1021/acscentsci.2c01042)). You can download this data using:
 
 ```
-git clone -b example-data https://github.com/oboril/MOCCA-frontend
+git clone -b example-data https://github.com/bayer-group/MOCCA-frontend
 ```
 
 The data contains:
@@ -142,7 +142,7 @@ After the command finishes, the executable will be in the `dist` directory.
 
 # Contributing
 
-The process for contributing is outlined in [CONTRIBUTING.md](https://github.com/oboril/MOCCA-frontend/blob/main/CONTRIBUTING.md).
+The process for contributing is outlined in [CONTRIBUTING.md](https://github.com/bayer-group/MOCCA-frontend/blob/main/CONTRIBUTING.md).
 
 
 # Code Standards
