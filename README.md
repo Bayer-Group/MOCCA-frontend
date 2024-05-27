@@ -3,7 +3,7 @@
 This branch contains example chromatograms from Knoevenagel condensation ([Haas et al., 2023](https://doi.org/10.1021/acscentsci.2c01042)). You can download this data using:
 
 ```
-git clone https://github.com/oboril/MOCCA-frontend/tree/example-data
+git clone https://github.com/bayer-group/MOCCA-frontend/tree/example-data
 ```
 
 The data contains:
