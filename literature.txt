@@ -1,3 +1,0 @@
-Shimadzu
-https://www.ssi.shimadzu.com/products/liquid-chromatography/hplc-software/intelligent-peak-deconvolution-analysis-i-pdea-ii/index.html#:~:text=Intelligent%20Peak%20Deconvolution%20Analysis%20%28i-PDeA%29%20is%20a%20data,when%20the%20impurity%20is%20co-eluted%20with%20an%20analyte.
-exactly same as what my_mocca does, but models peak shape with BEMG (some modification of exponentially modified gaussian)

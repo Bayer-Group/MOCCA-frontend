@@ -1,4 +1,0 @@
-mocca2
-dash
-dash-bootstrap-components
-flask-caching 
