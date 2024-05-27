@@ -6,3 +6,5 @@ dist
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 .idea
+venv
+example_data/unnest_data.sh
