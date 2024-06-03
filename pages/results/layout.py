@@ -7,6 +7,8 @@ def get_layout():
         value='area_perc',
         children=[
             dcc.Tab(label='Area %', value='area_perc', style=tab_style, selected_style=tab_style),
+            dcc.Tab(label='Integrals', value='integrals', style=tab_style, selected_style=tab_style),
+            dcc.Tab(label='rel. Integrals', value='rel_integrals', style=tab_style, selected_style=tab_style),
             dcc.Tab(label='Concentrations', value='conc', style=tab_style, selected_style=tab_style),
             dcc.Tab(label='Concentrations (ISTD)', value='conc_istd', style=tab_style, selected_style=tab_style),
             dcc.Tab(label='Chromatograms', value='chromatograms', style=tab_style, selected_style=tab_style),

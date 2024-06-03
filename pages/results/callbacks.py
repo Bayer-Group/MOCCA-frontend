@@ -3,6 +3,8 @@ from dash import callback, Input, Output # type: ignore
 from pages.results.layout_chromatogram import layout as layout_chromatogram
 from pages.results.layout_table_concs import layout_area_perc, layout_conc, layout_conc_istd
 from pages.results.layout_compounds import layout as layout_compounds
+from pages.results.layout_table_integrals import layout_integrals, layout_rel_integrals
+
 
 import cache
 
@@ -20,6 +22,10 @@ def render_content(tab):
         return layout_chromatogram()
     elif tab == 'area_perc':
         return layout_area_perc()
+    elif tab == 'integrals':
+        return layout_integrals()
+    elif tab == 'rel_integrals':
+        return layout_rel_integrals()
     elif tab == 'conc':
         return layout_conc()
     elif tab == 'conc_istd':

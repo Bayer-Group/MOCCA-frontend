@@ -40,3 +40,23 @@ def copy_table_to_clipboard_istd(_, data):
 def copy_table_to_clipboard_compounds(_, data):
     df = pd.DataFrame(data)
     return df.to_csv(index=False, sep='\t', decimal=',')
+
+@callback(
+    Output('results-clipboard-integrals','content'),
+    Input('results-clipboard-integrals', 'n_clicks'),
+    State('results-table-integrals', 'data'),
+    prevent_initial_callback=True
+)
+def copy_table_to_clipboard_integrals(_, data):
+    df = pd.DataFrame(data)
+    return df.to_csv(index=False, sep='\t', decimal=',')
+
+@callback(
+    Output('results-clipboard-rel-integrals','content'),
+    Input('results-clipboard-rel-integrals', 'n_clicks'),
+    State('results-table-rel-integrals', 'data'),
+    prevent_initial_callback=True
+)
+def copy_table_to_clipboard_rel_integrals(_, data):
+    df = pd.DataFrame(data)
+    return df.to_csv(index=False, sep='\t', decimal=',')

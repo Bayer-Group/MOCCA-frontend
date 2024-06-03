@@ -63,7 +63,7 @@ def layout_conc():
     rows = df.to_dict('records')
 
     header = html.H5(
-        "Absolute absorbance integrals",
+        "Absolute concentration calculated based on calibration run",
         className='d-inline-block',
         style={'margin-right': '1rem'}
     )
@@ -96,7 +96,7 @@ def layout_conc_istd():
     rows = df.to_dict('records')
 
     header = html.H5(
-        "Absorbance integrals normalized against internal standard",
+        "Relative concentration calculated based on calibration run",
         className='d-inline-block',
         style={'margin-right': '1rem'}
     )
